@@ -1,0 +1,23 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+CREATE DATABASE IF NOT EXISTS footdirect;
+
+DROP TABLE IF EXISTS `duel`;
+CREATE TABLE IF NOT EXISTS `duel` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `team_id` int(11) NOT NULL,
+  `link` mediumtext COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+DROP TABLE IF EXISTS `team`;
+CREATE TABLE IF NOT EXISTS `team` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` tinytext COLLATE utf8_bin NOT NULL,
+  `code` tinytext COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+COMMIT;
